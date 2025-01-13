@@ -1,0 +1,9 @@
+<h1>Add a recipe:</h1>
+
+<%= simple_form_for [@category, @bookmark] do |f| %>
+    <%= f.input :comment, label: "Enter your comment:" %>
+    <%= f.association :recipe %>
+    <%= f.submit %>
+<% end %>
+
+<%= link_to "Cancel", category_path(@category) %>
