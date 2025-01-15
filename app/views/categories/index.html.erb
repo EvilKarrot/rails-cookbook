@@ -1,10 +1,33 @@
-<h1>Categories:</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'cookbook.jpg' %>);">
+  <div class="container card-title">
+    <h1>Bring your recipes to life!</h1>
+    <p>Discover, cook, and share mouthwatering creations with ease.</p>
+  </div>
+</div>
 
-<ul>
-  <% @categories.each do |category| %>
-    <li><%= link_to category.name, category_path(category) %></li>
-  <% end %>
-</ul>
-
-
-<%= link_to "Create new category",  new_category_path %>
+<div class="container">
+  <div class="mt-4 d-flex justify-content-between">
+    <h3 class="blog-title">Cookbooks:</h3>
+    <%= link_to "Create a Cookbook", new_category_path, class: "btn btn-flat mb-4" %>
+  </div>
+  <div class="row">
+    <% @categories.each_with_index do |category, index| %>
+      <div class="col-md-4 mb-4">
+      <%= link_to category_path(category), class: "text-decoration-none" do  %>
+        <div class="card-category" style="background-image:
+          <% if category.photo.attached? %>
+            linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path category.photo.key, crop: :fill, gravity: :auto %>');
+            background-size: cover;
+          <% else %>
+            linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @random_image[index] %>');
+          <% end %>">
+          <div class="d-flex justify-content-center align-items-center flex-column" style="height: 200px;">
+            <h2 class="card-title"><%= category.name %></h2>
+            <p class="card-title"><%= category.bookmarks.count %> recipes</p>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,9 +1,14 @@
-<h1>Add a recipe:</h1>
+<div class="d-flex flex-column gap-4 w-25 mx-auto my-5">
+  <h1 class="blog-title">Add a recipe:</h1>
+  <div>
+    <div class="blog-title">
+      <%= simple_form_for [@category, @bookmark] do |f| %>
+          <%= f.input :comment, label: "Enter your comment:" %>
+          <%= f.association :recipe %>
+          <%= f.submit "Add recipe", class: "btn btn-flat" %>
+      <% end %>
+    </div>
+  <%= link_to "Cancel", category_path(@category), class: "btn btn-secondary mt-2", style: "color: white; width: 135px; border-radius: 4px;" %>
+  </div>
 
-<%= simple_form_for [@category, @bookmark] do |f| %>
-    <%= f.input :comment, label: "Enter your comment:" %>
-    <%= f.association :recipe %>
-    <%= f.submit %>
-<% end %>
-
-<%= link_to "Cancel", category_path(@category) %>
+</div>

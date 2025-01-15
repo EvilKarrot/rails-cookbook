@@ -1,0 +1,6 @@
+<div class="d-flex flex-column align-items-center w-50 m-auto blog-title">
+  <h1><%= @recipe.name %></h1>
+  <%= image_tag @recipe.image_url %>
+  <p><%= @recipe.instruction %></p>
+  <%= link_to "Back", category_path(@category), class: "btn btn-secondary" %>
+</div>

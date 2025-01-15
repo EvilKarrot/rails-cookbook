@@ -1,0 +1,41 @@
+.blog-title{
+  color: #22215B;
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px pink;
+}
+
+.card-title{
+  padding: 0.5rem 0;
+  text-shadow: 1px 1px 2px pink;
+}
+
+.description{
+  padding: 0.5rem 0;
+  color: #22215B80;
+  font-size: 1rem;
+  word-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+}
+
+.options{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.options span{
+  font-weight: 600;
+  color: #22215B;
+}
+
+.header{
+  color: #22215B;
+}
+
+.blog-time{
+  font-size: .8rem;
+  color: #22215B;
+}
