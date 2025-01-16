@@ -6,18 +6,15 @@
   cursor: pointer;
 }
 
-
 .star-rating input[type="radio"] {
   display: none;
 }
-
 
 .star-rating label {
   color: #ccc;
   padding: 0 5px;
   transition: color 0.2s;
 }
-
 
 .star-rating input[type="radio"]:checked ~ label,
 .star-rating label:hover,
